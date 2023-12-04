@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    @keyframes rotateRandom {
+      0% {
+        transform: rotate(var(--random-angle, 0deg));
+      }
+      50% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(0deg);
+      }
+    }
+
+    .animatedLetter {
+      display: inline-block;
+      font-size: 24px;
+      font-weight: bold;
+      color: blue;
+      animation: rotateRandom 2s forwards;
+      animation-iteration-count: 1;
+    }
+  </style>
+  <title>Text Animation</title>
+</head>
+<body>
+  <div id="text-container"></div>
+
+  <script>
+    // 텍스트를 담을 컨테이너
+    const textContainer = document.getElementById('text-container');
+
+    // 텍스트 내용
+    const textContent = "Hello, Animation!";
+
+    // 각 글자에 대한 난수로 설정된 각도 생성 및 스타일 적용
+    for (let i = 0; i < textContent.length; i++) {
+      const letter = document.createElement('span');
+      letter.textContent = textContent[i];
+      letter.classList.add('animatedLetter');
+
+      // 난수로 각도 설정 (0도에서 360도 사이)
+      const randomAngle = Math.floor(Math.random() * 361);
+      letter.style.setProperty('--random-angle', `${randomAngle}deg`);
+
+      textContainer.appendChild(letter);
+    }
+  </script>
+</body>
+</html>
