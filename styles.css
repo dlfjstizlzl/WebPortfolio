@@ -119,7 +119,7 @@ body {
 
 .animatedLetter {
   display: inline-block;
-  animation: rotateRandom 4s forwards;
+  animation: rotateRandom 2s forwards;
   animation-iteration-count: 1;
   color: #CCC;
   font-family: Pretendard;
