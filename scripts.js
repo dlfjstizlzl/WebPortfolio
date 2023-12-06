@@ -22,7 +22,7 @@ window.addEventListener("load", function () {
         // 휠의 방향에 따라 스크롤 처리 함수를 호출합니다.
         if (e.deltaY < 0) doScroll(--curSIdx);
         else doScroll(++curSIdx);
-      }, 1000);
+      }, 500);
     });
   
     // 스크롤을 처리하는 함수를 정의합니다.
